@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 pandas = "==1.2.0"
+loguru = "*"
+matplotlib = "*"
 
 [dev-packages]
 
