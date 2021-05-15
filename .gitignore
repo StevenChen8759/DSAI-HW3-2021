@@ -1,1 +1,6 @@
-submit/
+download/
+upload/
+output/
+sample_data/
+training_data/
+output.csv
