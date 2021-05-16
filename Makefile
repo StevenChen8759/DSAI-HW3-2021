@@ -20,15 +20,17 @@ ziphw:
 	@mkdir $(FILE_PREFIX)
 	@cp Pipfile* $(FILE_PREFIX)
 	@cp main.py $(FILE_PREFIX)
-	@mkdir $(FILE_PREFIX)/model
-	@cp model/*.py $(FILE_PREFIX)/model
+	@mkdir $(FILE_PREFIX)/predictor
+	@cp predictor/*.py $(FILE_PREFIX)/predictor
 	@mkdir $(FILE_PREFIX)/utils
 	@cp utils/*.py $(FILE_PREFIX)/utils
 	zip $(FILE_PREFIX) $(FILE_PREFIX)/*
+	zip $(FILE_PREFIX) $(FILE_PREFIX)/utils/*
+	zip $(FILE_PREFIX) $(FILE_PREFIX)/predictor/*
 	@mv $(FILE_PREFIX).zip upload
 	@echo
 	ls -al upload
-	# @rm -r $(FILE_PREFIX)
+	@rm -r $(FILE_PREFIX)
 
 upload:
 	$(eval VER := $(shell cat version.txt))
