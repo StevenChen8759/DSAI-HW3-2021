@@ -72,9 +72,3 @@ if __name__ == "__main__":
     ts_train_gen , ts_validation_gen = csvProcess.train_validation_split((household_gen_np_in, household_gen_np_out), 0.20)
     final_generation_model = LSTM.train(ts_train_gen, ts_validation_gen)
     LSTM.store_model(final_generation_model, "gen_lstm_model_v1.h5")
-
-    if args.read_encoded:
-        household_con_np_in.close()
-        household_gen_np_in.close()
-        household_con_np_out.close()
-        household_gen_np_out.close()
