@@ -4,3 +4,6 @@ output/
 sample_data/
 training_data/
 output.csv
+*.npy
+*.h5
+*.csv
