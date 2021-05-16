@@ -7,7 +7,7 @@ from loguru import logger
 
 # User Module Import
 from utils import csvIO, visualizer
-from predictor import random_model, fbrb_model
+from predictor import random_model, LSTM
 
 # User defined global variable / lambda function in this Module
 datetime_parse = lambda x: datetime.strptime(x, "%Y-%m-%d %H:%M:%S")
