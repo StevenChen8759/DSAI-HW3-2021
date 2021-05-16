@@ -55,8 +55,8 @@ def generate_bidding_one_day(input_df_con, input_df_gen):
 
         # Phase 3 - Generate bidding info - buy_action
         if buy_action:
-            buy_price = random.uniform(2.48, 2.52) # Buy price in NTD per kWh
-            buy_volume = random.uniform(2.5, 6.0)  # Buy volume in kWh
+            buy_price = random.uniform(2.37, 2.52) # Buy price in NTD per kWh
+            buy_volume = random.uniform(3.0, 7.0)  # Buy volume in kWh
             templist = []
             templist.append(dt_iter.strftime("%Y-%m-%d %H:%M:%S"))
             templist.append("buy")
@@ -66,12 +66,12 @@ def generate_bidding_one_day(input_df_con, input_df_gen):
 
         # Phase 4 - Generate bidding info - sell_action
         if sell_action:
-            sell_price = random.uniform(2.49, 2.53) # Sell price in NTD per kWh
-            sell_volume = random.uniform(1.0, 2.5)  # Sell volume in kWh
+            sell_price = random.uniform(2.38, 2.48) # Sell price in NTD per kWh
+            sell_volume = random.uniform(2.0, 4.0)  # Sell volume in kWh
         else:
             # Intentionally sell power with price higher than city power 2.53
             sell_price = random.uniform(2.53, 2.75) # Sell price in NTD per kWh
-            sell_volume = random.uniform(1.0, 2.5)  # Sell volume in kWh
+            sell_volume = random.uniform(1.0, 5.0)  # Sell volume in kWh
         templist = []
         templist.append(dt_iter.strftime("%Y-%m-%d %H:%M:%S"))
         templist.append("sell")

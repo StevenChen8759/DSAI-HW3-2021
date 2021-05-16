@@ -4,5 +4,8 @@ v3 - random model 2 - fix bug and randomly bid
 v4 - random model 3 - improve randomized model output
 v5 - random model 4 - remove all selling action (幫別人倒貼的部分)
 v6 - random model 5 - adjust con/gen range, adjust time limitation
-v7 - random model 5 - add miss-compressed content and adjust random price range
-v8 - random model 8 - intentially sell price higher than city price during not generating time period
+v7 - random model 6 - add miss-compressed content and adjust random price range
+v8 - random model 7 - intentially sell price higher than city price during not generating time period
+v9 - random model 8 - decrease buying and selling price range
+v10 - random model 9 - decrease selling price range
+v11 - random model 10 - adjust selling price range
