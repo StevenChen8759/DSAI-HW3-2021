@@ -7,7 +7,7 @@ from loguru import logger
 
 # User Module Import
 from utils import csvIO, visualizer
-from predictor import random_model, LSTM
+from predictor import SVR
 
 # User defined global variable / lambda function in this Module
 datetime_parse = lambda x: datetime.strptime(x, "%Y-%m-%d %H:%M:%S")
@@ -29,10 +29,10 @@ def config():
 if __name__ == "__main__":
 
     args = config()
-    logger.debug(f"Consumption input csv file    -> ./datasets/{args.consumption}")
-    logger.debug(f"Generation input csv file     -> ./datasets/{args.generation}")
-    logger.debug(f"Bidding result input csv file -> ./datasets/{args.bidresult}")
-    logger.debug(f"Model Prediction Output       -> ./{args.output}")
+    logger.debug(f"Consumption input csv file    -> {args.consumption}")
+    logger.debug(f"Generation input csv file     -> {args.generation}")
+    logger.debug(f"Bidding result input csv file -> {args.bidresult}")
+    logger.debug(f"Model Prediction Output       -> {args.output}")
 
     consumption = csvIO.read(args.consumption)
     generation = csvIO.read(args.generation)
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     logger.info(f"generation length: {len(generation.index)}")
     logger.info(f"bidresult is not null: {not bidresult.empty}")
 
-
-
-    data = random_model.generate_bidding_one_day(consumption, generation)
+    # data = random_model.generate_bidding_one_day(consumption, generation)
+    # data = LSTM.generate_bidding_one_day(consumption, generation)
+    data = SVR.generate_bidding_one_day(consumption, generation)
     csvIO.write(args.output, data)

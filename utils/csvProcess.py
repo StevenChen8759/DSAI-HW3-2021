@@ -11,10 +11,6 @@ from loguru import logger
 # User defined global variable / lambda function in this Module
 
 # Function Definition
-def normalize(ip_train, norm_function):
-    train_norm = ip_train.apply(norm_function)
-    return train_norm
-
 
 def encode_tsdata(input_df, iplen=1, oplen=1):
     assert(iplen >= 1 and oplen >= 1)
