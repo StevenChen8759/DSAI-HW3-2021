@@ -19,6 +19,7 @@ ziphw:
 	@echo
 	@mkdir $(FILE_PREFIX)
 	@cp Pipfile* $(FILE_PREFIX)
+	@cp *.joblib $(FILE_PREFIX)
 	@cp main.py $(FILE_PREFIX)
 	@mkdir $(FILE_PREFIX)/predictor
 	@cp predictor/*.py $(FILE_PREFIX)/predictor
